@@ -21,8 +21,13 @@ nsfwjsApi.gif = {
 nsfwjsApi
   .identificationOfPictures('./QQ截图20221116221527.gif')
   .then(result => {
-    console.log(result.msg);
-
+    // 成功
+    if (result.code === 200) {
+      console.log(result.msg);
+    } else {
+      // 失败
+      console.log(result.msg);
+    }
   })
   .catch(err => {
     console.log(err);

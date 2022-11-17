@@ -1,5 +1,6 @@
 # nsfwjs-api
-```
+
+```javascript
 import nsfwjsApi from 'nsfwjs-api';
 
 // 是否使用本地模型 默认false
@@ -34,5 +35,4 @@ nsfwjsApi
   .catch(err => {
     console.log(err);
   });
-
 ```
