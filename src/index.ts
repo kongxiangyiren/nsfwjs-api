@@ -194,4 +194,5 @@ class nsfwjsApi {
   }
 }
 
-export default new nsfwjsApi();
+// export default new nsfwjsApi();
+export=new nsfwjsApi()

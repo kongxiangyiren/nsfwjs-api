@@ -37,20 +37,19 @@ npm i nsfwjs-api
 import nsfwjsApi from 'nsfwjs-api'; 
 
 
-const nsfwjs = nsfwjsApi.default;
 
 // 是否使用本地模型 默认false
-nsfwjs.UseModel = true;
+nsfwjsApi.UseModel = true;
 
 // 模型位置 默认运行文件夹下model, UseModel为false时无效
-nsfwjs.model = './model/';
+nsfwjsApi.model = './model/';
 
 //   copy模型文件夹, UseModel为false时无效
 // 模型文件 https://github.com/infinitered/nsfwjs/tree/master/example/nsfw_demo/public/model
-nsfwjs.cpModel();
+nsfwjsApi.cpModel();
 
 // gif配置
-nsfwjs.gif = {
+nsfwjsApi.gif = {
   // fps: 1, //每秒帧数，从中按比例选取帧（默认为所有帧）
   topk: 5 // 每帧返回的结果数（默认全部为 5）
 };
@@ -58,7 +57,7 @@ nsfwjs.gif = {
 // 鉴图
 //  图片地址 可以是 https | http | 图片路径
 // 图片类型 为 jpg | png | gif
-nsfwjs
+nsfwjsApi
   .identificationOfPictures('./QQ截图20221116221527.gif')
   .then(result => {
     // 成功
