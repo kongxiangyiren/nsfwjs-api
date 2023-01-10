@@ -1,3 +1,19 @@
+<h1 align="center">Welcome to nsfwjs-api 👋</h1>
+<p>
+  <a href="https://www.npmjs.com/package/nsfwjs-api" target="_blank">
+    <img alt="Version" src="https://img.shields.io/npm/v/nsfwjs-api.svg">
+  </a>
+  <a href="https://github.com/kongxiangyiren/nsfwjs-api#readme" target="_blank">
+    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
+  </a>
+  <a href="https://github.com/kongxiangyiren/nsfwjs-api/graphs/commit-activity" target="_blank">
+    <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
+  </a>
+  <a href="https://github.com/kongxiangyiren/nsfwjs-api/blob/master/LICENSE" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/github/license/kongxiangyiren/nsfwjs-api" />
+  </a>
+</p>
+
 > nsfwjs-api 鉴别 jpg、png、gif图片
 
 ### 🏠 [Homepage](https://github.com/kongxiangyiren/nsfwjs-api#readme)
@@ -8,11 +24,12 @@
 npm i nsfwjs-api
 ```
 
+
 # Err
 
 ## 1、安装报错
 
-![](1672815221000.png)
+![err](1672815221000.png)
 
 在项目根目录下创建 `.npmrc` 文件
 
@@ -22,7 +39,7 @@ TFJS_NODE_CDN_STORAGE=https://cdn.npmmirror.com/binaries/
 
 或者
 
-```bash
+```sh
 npm config set TFJS_NODE_CDN_STORAGE https://cdn.npmmirror.com/binaries/
 ```
 
@@ -121,7 +138,7 @@ nsfwjsApi
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!Feel free to check [issues page](https://github.com/kongxiangyiren/nsfwjs-api/issues). You can also take a look at the [contributing guide](https://github.com/kongxiangyiren/nsfwjs-api/blob/master/CONTRIBUTING.md).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/kongxiangyiren/nsfwjs-api/issues). 
 
 ## Show your support
 
@@ -129,9 +146,8 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2022 [空巷一人](https://github.com/kongxiangyiren).
+Copyright © 2023 [空巷一人](https://github.com/kongxiangyiren).<br />
 This project is [MIT](https://github.com/kongxiangyiren/nsfwjs-api/blob/master/LICENSE) licensed.
 
 ***
-
-*This README was generated with ❤️ by *[*readme-md-generator*](https://github.com/kefranabg/readme-md-generator)
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
