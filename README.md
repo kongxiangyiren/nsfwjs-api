@@ -14,7 +14,7 @@
   </a>
 </p>
 
-> nsfwjs-api 鉴别 jpg、png、gif图片
+> nsfwjs-api 鉴别 jpg、png、gif 图片
 
 ### 🏠 [Homepage](https://github.com/kongxiangyiren/nsfwjs-api#readme)
 
@@ -23,7 +23,6 @@
 ```sh
 npm i nsfwjs-api
 ```
-
 
 # Err
 
@@ -43,18 +42,22 @@ TFJS_NODE_CDN_STORAGE=https://cdn.npmmirror.com/binaries/
 npm config set TFJS_NODE_CDN_STORAGE https://cdn.npmmirror.com/binaries/
 ```
 
+## 2、运行报错
+
+![alt text](image.png)
+
+复制`node_modules\@tensorflow\tfjs-node\lib\napi-v9\tensorflow.dll` 到 `node_modules\@tensorflow\tfjs-node\lib\napi-v8\tensorflow.dll`
+
 ## Use
 
 ### js
 
 ```javascript
 //commonjs
-// const nsfwjsApi = require( 'nsfwjs-api') 
+// const nsfwjsApi = require( 'nsfwjs-api')
 
 // module
-import nsfwjsApi from 'nsfwjs-api'; 
-
-
+import nsfwjsApi from 'nsfwjs-api';
 
 // 是否使用本地模型 默认false
 nsfwjsApi.UseModel = true;
@@ -63,17 +66,14 @@ nsfwjsApi.UseModel = true;
 nsfwjsApi.model = './model/';
 
 //   copy模型文件夹, UseModel为false时无效
-// 模型文件 https://github.com/infinitered/nsfwjs/tree/master/example/nsfw_demo/public/model
+// 模型文件 https://github.com/infinitered/nsfwjs/tree/master/models/inception_v3
 nsfwjsApi.cpModel();
 
-// gif配置
-nsfwjsApi.gif = {
-  // fps: 1, //每秒帧数，从中按比例选取帧（默认为所有帧）
-  topk: 5 // 每帧返回的结果数（默认全部为 5）
-};
+// 返回的结果数（默认全部为 5）
+nsfwjsApi.topk=5
 
 // 鉴图
-//  图片地址 可以是 https | http | 图片路径
+//  图片地址 可以是 https | http | 图片路径 | Buffer
 // 图片类型 为 jpg | png | gif
 nsfwjsApi
   .identificationOfPictures('./QQ截图20221116221527.gif')
@@ -102,18 +102,15 @@ nsfwjsApi.UseModel = true;
 // 模型位置 默认运行文件夹下model, UseModel为false时无效
 nsfwjsApi.model = './model/';
 
-//   copy模型文件夹, UseModel为false时无效 
-// 模型文件 https://github.com/infinitered/nsfwjs/tree/master/example/nsfw_demo/public/model
+//   copy模型文件夹, UseModel为false时无效
+// 模型文件 https://github.com/infinitered/nsfwjs/tree/master/models/inception_v3
 nsfwjsApi.cpModel();
 
-// gif配置
-nsfwjsApi.gif = {
-  // fps: 1, //每秒帧数，从中按比例选取帧（默认为所有帧）
-  topk: 5 // 每帧返回的结果数（默认全部为 5）
-};
+// 返回的结果数（默认全部为 5）
+nsfwjsApi.topk=5
 
 // 鉴图
-//  图片地址 可以是 https | http | 图片路径
+//  图片地址 可以是 https | http | 图片路径 | Buffer
 nsfwjsApi
   .identificationOfPictures('./QQ截图20221116221527.gif')
   .then(result => {
@@ -134,11 +131,11 @@ nsfwjsApi
 
 👤 **空巷一人**
 
-* Github: [@kongxiangyiren](https://github.com/kongxiangyiren)
+- Github: [@kongxiangyiren](https://github.com/kongxiangyiren)
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/kongxiangyiren/nsfwjs-api/issues). 
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/kongxiangyiren/nsfwjs-api/issues).
 
 ## Show your support
 
@@ -146,8 +143,9 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2023 [空巷一人](https://github.com/kongxiangyiren).<br />
+Copyright © 2024 [空巷一人](https://github.com/kongxiangyiren).<br />
 This project is [MIT](https://github.com/kongxiangyiren/nsfwjs-api/blob/master/LICENSE) licensed.
 
-***
+---
+
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_

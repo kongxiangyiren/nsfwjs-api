@@ -8,17 +8,13 @@ nsfwjsApi.UseModel = true;
 nsfwjsApi.model = './model/';
 
 //   copy模型文件夹, UseModel为false时无效 
-// 模型文件 https://github.com/infinitered/nsfwjs/tree/master/example/nsfw_demo/public/model
+// 模型文件 https://github.com/infinitered/nsfwjs/tree/master/models/inception_v3
 nsfwjsApi.cpModel();
 
-// gif配置
-nsfwjsApi.gif = {
-  // fps: 1, //每秒帧数，从中按比例选取帧（默认为所有帧）
-  topk: 5 // 每帧返回的结果数（默认全部为 5）
-};
+nsfwjsApi.topk=1
 
 // 鉴图
-//  图片地址 可以是 https | http | 图片路径
+//  图片地址 可以是 https | http | 图片路径 | Buffer
 nsfwjsApi
   .identificationOfPictures('./QQ截图20221116221527.gif')
   .then(result => {
