@@ -1,6 +1,6 @@
 {
   "name": "nsfwjs-api",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "nsfwjs-api 鉴别 jpg、png、gif图片",
   "main": "dist/index.js",
   "scripts": {
@@ -20,7 +20,7 @@
     "url": "https://github.com/kongxiangyiren/nsfwjs-api.git"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org"
+    "registry": "https://registry.npmjs.com"
   },
   "keywords": [
     "nsfwjs",

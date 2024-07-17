@@ -1,5 +1,5 @@
 import { node } from '@tensorflow/tfjs-node';
-import { load } from 'nsfwjs';
+import { load, type NSFWJS } from 'nsfwjs';
 import axios from 'axios';
 import path from 'path';
 import fs from 'fs';
@@ -21,6 +21,7 @@ class nsfwjsApi {
    * @return {*}
    */
   topk?: number;
+  modelLoad?: NSFWJS;
 
   constructor() {
     //模型位置
@@ -136,18 +137,6 @@ class nsfwjsApi {
       type = mime;
     }
 
-    let model;
-
-    if (this.UseModel) {
-      let modelPath = `file://${path.resolve(this.model)}/`;
-      modelPath = modelPath.replace(/\\/g, '/');
-      model = await load(modelPath, {
-        size: 299
-      }); // To load a local model, nsfw.load('file://./path/to/model/')
-    } else {
-      model = await load('InceptionV3'); // To load a local model, nsfw.load('file://./path/to/model/')
-    }
-
     if (/(jpeg|png|gif)$/i.test(type)) {
       // 图像必须tf.tensor3d格式
       // 您可以将图像转换为tf.tensor3d带 tf.node.decodeImage(Uint8Array,channels)
@@ -161,6 +150,7 @@ class nsfwjsApi {
         return error2;
       }
 
+      let model = this.modelLoad ?? (await this.load());
       const predictions = await model.classify(img, this.topk).catch(err => {
         console.log(err);
 
@@ -174,6 +164,26 @@ class nsfwjsApi {
       };
     } else {
       return error1;
+    }
+  }
+
+  async load() {
+    if (this.modelLoad) {
+      return this.modelLoad;
+    }
+    let model;
+    if (this.UseModel) {
+      let modelPath = `file://${path.resolve(this.model)}/`;
+      modelPath = modelPath.replace(/\\/g, '/');
+      model = await load(modelPath, {
+        size: 299
+      }); // To load a local model, nsfw.load('file://./path/to/model/')
+      this.modelLoad = model;
+      return model;
+    } else {
+      model = await load('InceptionV3'); // To load a local model, nsfw.load('file://./path/to/model/')
+      this.modelLoad = model;
+      return model;
     }
   }
 }
